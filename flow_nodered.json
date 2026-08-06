@@ -1,0 +1,1611 @@
+[
+    {
+        "id": "64acc005fd122c55",
+        "type": "tab",
+        "label": " Automatic Weather System",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e7e035e1ccc68925",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "Mengambil data untuk disimpan di Database",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "976573aa00157f44",
+            "d24f88e60b6d5a86",
+            "349f3782fcd7d245"
+        ],
+        "x": 574,
+        "y": -1,
+        "w": 672,
+        "h": 82
+    },
+    {
+        "id": "6c690546b7ce4f8d",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "merespon pesan untuk cek kondisi",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "833531f935eac636",
+            "672fa5ceabbe4533",
+            "5ccc29296d8ab0d4",
+            "3e1bbcc0e22c4e62",
+            "1ea24211ecab917c",
+            "2b41f4c0391493cb",
+            "b5d6ade19b099c2e",
+            "f2d8f998d2281ce2",
+            "c5dad0645567ede3",
+            "1401752bedb3b6c4"
+        ],
+        "x": 34,
+        "y": 679,
+        "w": 1672,
+        "h": 142
+    },
+    {
+        "id": "91ecf4b2f71a414f",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "merubah nilai ambang batas ketinggian air",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4f8eea7a8ab9b17f",
+            "08bf085b6829354b",
+            "9cc78fbb31414545",
+            "52829b0662677095",
+            "610bee8758b0d1aa",
+            "ab207fa3fb69eb5e"
+        ],
+        "x": 34,
+        "y": 899,
+        "w": 1312,
+        "h": 82
+    },
+    {
+        "id": "fd757ba2a5e192a7",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "mengirim peringatan jika jarak air ke permukaan kurang dari ambang batas",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5757c42b1c8b4fd9",
+            "a36c0fa153140cf9",
+            "cdeaa5f19c686ada",
+            "2d0cdd57716349c8",
+            "275422f73fd8c27e",
+            "a924eb9c27eb9cc6",
+            "cfcad4dce561658b",
+            "62025cbb959c548d",
+            "1ecb6651688b1727",
+            "1fb95e8e0b99ed30",
+            "48ad455ef84d0b7d"
+        ],
+        "x": 154,
+        "y": 1059,
+        "w": 1652,
+        "h": 142
+    },
+    {
+        "id": "2e27690dcbb01c8e",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "guide chat",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a346e525378109f4",
+            "95ca4ffbc37e5782",
+            "645f31908d16f133",
+            "eea48c1df230d12a"
+        ],
+        "x": 534,
+        "y": 519,
+        "w": 902,
+        "h": 82
+    },
+    {
+        "id": "dea73e150009ad47",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "Tampilkan Data ke Dashboard",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a8c35243956a7c02",
+            "3874a1786bb8e4b0",
+            "65c67ae5e7a596d9",
+            "9b80d52f4bb724a2",
+            "6c1fcdba7adc86b1",
+            "722eab6075313ae6",
+            "425eba14457694b2"
+        ],
+        "x": 1054,
+        "y": 119,
+        "w": 632,
+        "h": 342
+    },
+    {
+        "id": "3bc7bc7776af5420",
+        "type": "group",
+        "z": "64acc005fd122c55",
+        "name": "Pengambilan Data",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d7f3c45d40577884",
+            "dbd440f099bb7d0e",
+            "b47a9dae72ce33a8",
+            "b2953f896ac371e3",
+            "b6ddc81f5d1e7d5b",
+            "b010b7728d5fbd35",
+            "a3982e29ac29325e",
+            "5fec3a2015c82f7e"
+        ],
+        "x": 34,
+        "y": 216.5,
+        "w": 932,
+        "h": 244.5
+    },
+    {
+        "id": "976573aa00157f44",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "e7e035e1ccc68925",
+        "name": "simpan ke database",
+        "func": "if (!msg.payload) {\n    return null;\n}\n\nvar timestamp = Math.round(Date.now() / 1000);\n\nmsg.topic =\n    `INSERT INTO monitoring (temperature, humidity, distance, timestamp) VALUES (\n    ${msg.payload.temperature},\n    ${msg.payload.humidity},\n    ${msg.payload.distance},\n    ${timestamp}\n)`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 40,
+        "wires": [
+            [
+                "d24f88e60b6d5a86"
+            ]
+        ]
+    },
+    {
+        "id": "5ccc29296d8ab0d4",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "membuat pesan telegram",
+        "func": "var temperature = msg.payload[0][0].temperature;\nvar humidity = msg.payload[0][0].humidity;\nvar distanceCm = msg.payload[0][0].distance;\nvar threshold = msg.payload[1][0].threshold;\n\nvar timestamp = new Date(msg.payload[0][0].timestamp*1000);\n\n\nmsg.payload = {\n\"content\" : \"AUTOMATIC WEATHER SYSTEM\\n\\nSuhu : \"+temperature+\" °C\\nHumidity : \"+humidity+\" %\\nJarak air ke permukaan : \"+distanceCm+\" Cm\\nAmbang batas jarak Air: \"+threshold+\" Cm\\nWaktu Setempat: \"+timestamp+\"\",\n\"chatId\" : 1000064401,\n\"type\" : \"message\"\n};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 760,
+        "wires": [
+            [
+                "833531f935eac636"
+            ]
+        ]
+    },
+    {
+        "id": "08bf085b6829354b",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "91ecf4b2f71a414f",
+        "name": "set ambang batas",
+        "func": "var threshold = msg.payload.content;\n\nmsg.topic = \"UPDATE setting SET threshold=\"+threshold+\" WHERE id=1\";\nmsg.payload = threshold;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "9cc78fbb31414545"
+            ]
+        ]
+    },
+    {
+        "id": "5757c42b1c8b4fd9",
+        "type": "inject",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 1100,
+        "wires": [
+            [
+                "a36c0fa153140cf9",
+                "48ad455ef84d0b7d"
+            ]
+        ]
+    },
+    {
+        "id": "a36c0fa153140cf9",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "akses nilai distance terupdate ",
+        "func": "msg.topic = \"SELECT distance from monitoring ORDER BY id DESC LIMIT 1\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1100,
+        "wires": [
+            [
+                "a924eb9c27eb9cc6"
+            ]
+        ]
+    },
+    {
+        "id": "cdeaa5f19c686ada",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "akses nilai ambang batas",
+        "func": "msg.topic = \"SELECT threshold FROM setting WHERE id=1\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1160,
+        "wires": [
+            [
+                "275422f73fd8c27e"
+            ]
+        ]
+    },
+    {
+        "id": "2d0cdd57716349c8",
+        "type": "join",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "payload[0]",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 1120,
+        "wires": [
+            [
+                "cfcad4dce561658b"
+            ]
+        ]
+    },
+    {
+        "id": "d24f88e60b6d5a86",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "e7e035e1ccc68925",
+        "mydb": "a12b21964a3d429c",
+        "name": "",
+        "x": 910,
+        "y": 40,
+        "wires": [
+            [
+                "349f3782fcd7d245"
+            ]
+        ]
+    },
+    {
+        "id": "9cc78fbb31414545",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "91ecf4b2f71a414f",
+        "mydb": "e15a88b9d5110f79",
+        "name": "",
+        "x": 570,
+        "y": 940,
+        "wires": [
+            [
+                "52829b0662677095"
+            ]
+        ]
+    },
+    {
+        "id": "275422f73fd8c27e",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "mydb": "3ed302de3bca8af6",
+        "name": "",
+        "x": 710,
+        "y": 1160,
+        "wires": [
+            [
+                "2d0cdd57716349c8"
+            ]
+        ]
+    },
+    {
+        "id": "a924eb9c27eb9cc6",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "mydb": "d174702ed7b91f2e",
+        "name": "",
+        "x": 710,
+        "y": 1100,
+        "wires": [
+            [
+                "2d0cdd57716349c8"
+            ]
+        ]
+    },
+    {
+        "id": "3e1bbcc0e22c4e62",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "akses data monitoring",
+        "func": "msg.topic = \"SELECT * from monitoring ORDER BY id DESC LIMIT 1\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 720,
+        "wires": [
+            [
+                "1ea24211ecab917c"
+            ]
+        ]
+    },
+    {
+        "id": "1ea24211ecab917c",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "mydb": "873b8d40bdbbd444",
+        "name": "",
+        "x": 690,
+        "y": 720,
+        "wires": [
+            [
+                "c5dad0645567ede3"
+            ]
+        ]
+    },
+    {
+        "id": "cfcad4dce561658b",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "kirim pesan peringatan ",
+        "func": "var distance = msg.payload[0][0].distance;\nvar threshold = msg.payload[1][0].threshold;\n\nif (distance <= threshold){\n    msg.payload = {\n        \"chatId\": 1000064401,\n        \"type\" : \"message\" ,\n        \"content\" : \"Jarak air mendekati permukaan!!\"\n    };\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 1120,
+        "wires": [
+            [
+                "62025cbb959c548d"
+            ]
+        ]
+    },
+    {
+        "id": "62025cbb959c548d",
+        "type": "delay",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1300,
+        "y": 1120,
+        "wires": [
+            [
+                "1ecb6651688b1727"
+            ]
+        ]
+    },
+    {
+        "id": "52829b0662677095",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "91ecf4b2f71a414f",
+        "name": "feedback ke user",
+        "func": "msg.payload = {\n    \"chatId\": 1000064401 ,\n    \"type\" : \"message\",\n    \"content\" : \"Perubahan ambang batas jarak Sukses\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 940,
+        "wires": [
+            [
+                "610bee8758b0d1aa"
+            ]
+        ]
+    },
+    {
+        "id": "2b41f4c0391493cb",
+        "type": "debug",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "ab207fa3fb69eb5e",
+        "type": "debug",
+        "z": "64acc005fd122c55",
+        "g": "91ecf4b2f71a414f",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "1fb95e8e0b99ed30",
+        "type": "debug",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "b5d6ade19b099c2e",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "akses data setting",
+        "func": "msg.topic = \"SELECT threshold from setting ORDER BY id DESC LIMIT 1\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 780,
+        "wires": [
+            [
+                "f2d8f998d2281ce2"
+            ]
+        ]
+    },
+    {
+        "id": "f2d8f998d2281ce2",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "mydb": "2f384c6b9a1e761b",
+        "name": "",
+        "x": 690,
+        "y": 780,
+        "wires": [
+            [
+                "c5dad0645567ede3"
+            ]
+        ]
+    },
+    {
+        "id": "c5dad0645567ede3",
+        "type": "join",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 760,
+        "wires": [
+            [
+                "5ccc29296d8ab0d4"
+            ]
+        ]
+    },
+    {
+        "id": "48ad455ef84d0b7d",
+        "type": "delay",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 1160,
+        "wires": [
+            [
+                "cdeaa5f19c686ada"
+            ]
+        ]
+    },
+    {
+        "id": "1401752bedb3b6c4",
+        "type": "delay",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 780,
+        "wires": [
+            [
+                "b5d6ade19b099c2e"
+            ]
+        ]
+    },
+    {
+        "id": "95ca4ffbc37e5782",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "2e27690dcbb01c8e",
+        "name": "pesan untuk guide user",
+        "func": "msg.payload = {\n    \"chatId\" : 1000064401,\n    \"type\" : \"message\",\n    \"content\" : \"AUTOMATIC WEATHER SYSTEM \\n\\nGunakan perintah berikut:\\n\\n/ceksituasi untuk mendapatkan informasi tentang data pembacaan sensor \\n\\n/setbatas (spasi)(nilai dalam satuan Cm) untuk merubah nilai ambang batas jarak air dengan permukaan sungai\"\n\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 560,
+        "wires": [
+            [
+                "645f31908d16f133"
+            ]
+        ]
+    },
+    {
+        "id": "eea48c1df230d12a",
+        "type": "debug",
+        "z": "64acc005fd122c55",
+        "g": "2e27690dcbb01c8e",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "349f3782fcd7d245",
+        "type": "debug",
+        "z": "64acc005fd122c55",
+        "g": "e7e035e1ccc68925",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "672fa5ceabbe4533",
+        "type": "telegram command",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "",
+        "command": "/ceksituasi",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "99ac08f08d08f36a",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 120,
+        "y": 760,
+        "wires": [
+            [
+                "3e1bbcc0e22c4e62",
+                "1401752bedb3b6c4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4f8eea7a8ab9b17f",
+        "type": "telegram command",
+        "z": "64acc005fd122c55",
+        "g": "91ecf4b2f71a414f",
+        "name": "",
+        "command": "/setbatas",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "99ac08f08d08f36a",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 120,
+        "y": 940,
+        "wires": [
+            [
+                "08bf085b6829354b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a346e525378109f4",
+        "type": "telegram command",
+        "z": "64acc005fd122c55",
+        "g": "2e27690dcbb01c8e",
+        "name": "",
+        "command": "/start",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "99ac08f08d08f36a",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 560,
+        "wires": [
+            [
+                "95ca4ffbc37e5782"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "833531f935eac636",
+        "type": "telegram sender",
+        "z": "64acc005fd122c55",
+        "g": "6c690546b7ce4f8d",
+        "name": "AWS IOT BOT",
+        "bot": "99ac08f08d08f36a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1380,
+        "y": 760,
+        "wires": [
+            [
+                "2b41f4c0391493cb"
+            ]
+        ]
+    },
+    {
+        "id": "1ecb6651688b1727",
+        "type": "telegram sender",
+        "z": "64acc005fd122c55",
+        "g": "fd757ba2a5e192a7",
+        "name": "AWS IOT BOT",
+        "bot": "99ac08f08d08f36a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1500,
+        "y": 1120,
+        "wires": [
+            [
+                "1fb95e8e0b99ed30"
+            ]
+        ]
+    },
+    {
+        "id": "610bee8758b0d1aa",
+        "type": "telegram sender",
+        "z": "64acc005fd122c55",
+        "g": "91ecf4b2f71a414f",
+        "name": "AWS IOT BOT",
+        "bot": "99ac08f08d08f36a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 940,
+        "wires": [
+            [
+                "ab207fa3fb69eb5e"
+            ]
+        ]
+    },
+    {
+        "id": "645f31908d16f133",
+        "type": "telegram sender",
+        "z": "64acc005fd122c55",
+        "g": "2e27690dcbb01c8e",
+        "name": "AWS IOT BOT",
+        "bot": "99ac08f08d08f36a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1130,
+        "y": 560,
+        "wires": [
+            [
+                "eea48c1df230d12a"
+            ]
+        ]
+    },
+    {
+        "id": "d7f3c45d40577884",
+        "type": "mqtt in",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "name": "Data JSON",
+        "topic": "cakraawijaya/aws",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "d95a672fd9909642",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "dbd440f099bb7d0e"
+            ]
+        ]
+    },
+    {
+        "id": "dbd440f099bb7d0e",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "name": "Parsing data",
+        "func": "var temperature = msg.payload.temperature;\nvar humidity = msg.payload.humidity;\nvar distance = msg.payload.distance;\n\nreturn [\n    {\n        payload: {\n            temperature: temperature,\n            humidity: humidity,\n            distance: distance\n        }\n    },\n    {\n        payload: temperature\n    },\n    {\n        payload: humidity\n    }\n    ,\n    {\n        payload: distance\n    }\n];",
+        "outputs": 5,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "976573aa00157f44"
+            ],
+            [
+                "a8c35243956a7c02",
+                "6c1fcdba7adc86b1"
+            ],
+            [
+                "3874a1786bb8e4b0",
+                "722eab6075313ae6"
+            ],
+            [
+                "65c67ae5e7a596d9",
+                "425eba14457694b2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a8c35243956a7c02",
+        "type": "ui_template",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "group": "6794f86027e20ccd",
+        "name": "Temperature",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"\nheight:100%;\nmargin-top:0 !important;\npadding:18px;\nborder-radius:20px;\nbackground:linear-gradient(135deg,#FF9A44,#FC6076);\ncolor:white;\ntext-align:center;\nbox-sizing:border-box;\nbox-shadow:0 5px 15px rgba(0,0,0,.2);\n\">\n\n    <div style=\"font-size:45px;\">\n        <i class=\"fa fa-thermometer-full\"></i>\n    </div>\n\n    <div style=\"font-size:18px;font-weight:bold;margin-top:8px;\">\n        Temperature\n    </div>\n\n    <div style=\"font-size:36px;font-weight:bold;margin-top:20px;\">\n        {{msg.payload != null ? msg.payload : \"-\"}} °C\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1150,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3874a1786bb8e4b0",
+        "type": "ui_template",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "group": "5d9d7eb91e792aaa",
+        "name": "Humidity",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"\nheight:100%;\npadding:18px;\nborder-radius:20px;\nbackground:linear-gradient(135deg,#36D1DC,#5B86E5);\ncolor:white;\ntext-align:center;\nbox-sizing:border-box;\nbox-shadow:0 5px 15px rgba(0,0,0,.2);\n\">\n\n    <div style=\"font-size:45px;\">\n        <i class=\"fa fa-tint\"></i>\n    </div>\n\n    <div style=\"font-size:18px;font-weight:bold;margin-top:8px;\">\n        Humidity\n    </div>\n\n    <div style=\"font-size:36px;font-weight:bold;margin-top:20px;\">\n        {{msg.payload != null ? msg.payload : \"-\"}} %\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1240,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65c67ae5e7a596d9",
+        "type": "ui_template",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "group": "c603e0c21b439f61",
+        "name": "Water Level",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"\nheight:100%;\npadding:18px;\nborder-radius:20px;\nbackground:linear-gradient(135deg,#667EEA,#764BA2);\ncolor:white;\ntext-align:center;\nbox-sizing:border-box;\nbox-shadow:0 5px 15px rgba(0,0,0,.2);\n\">\n\n    <div style=\"font-size:45px;\">\n        <i class=\"fa fa-cloud\"></i>\n    </div>\n\n    <div style=\"font-size:18px;font-weight:bold;margin-top:8px;\">\n        Water Level\n    </div>\n\n    <div style=\"font-size:36px;font-weight:bold;margin-top:20px;\">\n        {{msg.payload != null ? (msg.payload | number:2) : \"-\"}} cm\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1150,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b80d52f4bb724a2",
+        "type": "ui_template",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "group": "9d11d5299601fdb4",
+        "name": "Status",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"\nheight:100%;\npadding:18px;\nborder-radius:20px;\ncolor:white;\ntext-align:center;\nbox-sizing:border-box;\nbox-shadow:0 5px 15px rgba(0,0,0,.2);\" ng-style=\"{\n'background': 'linear-gradient(135deg,#141E30,#243B55)'\n}\">\n\n    <div style=\"font-size:45px;\">\n        <i class=\"fa fa-shield\"></i>\n    </div>\n\n    <div style=\"font-size:18px;font-weight:bold;margin-top:8px;\">\n        System Status\n    </div>\n\n    <div style=\"font-size:36px;font-weight:bold;margin-top:20px;\">\n        {{msg.payload != null ? msg.payload : \"🟢AMAN\"}}\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1230,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2953f896ac371e3",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "name": "SELECT Distance",
+        "func": "msg.topic = \"SELECT distance FROM monitoring ORDER BY id DESC LIMIT 1\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "b6ddc81f5d1e7d5b"
+            ]
+        ]
+    },
+    {
+        "id": "b010b7728d5fbd35",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "name": "Simpan Distance",
+        "func": "// Simpan nilai distance\nflow.set(\"distance\", Number(msg.payload[0].distance));\n\n// Query threshold\nmsg.topic = \"SELECT threshold FROM setting WHERE id=1\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "a3982e29ac29325e"
+            ]
+        ]
+    },
+    {
+        "id": "b6ddc81f5d1e7d5b",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "mydb": "a12b21964a3d429c",
+        "name": "",
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "b010b7728d5fbd35"
+            ]
+        ]
+    },
+    {
+        "id": "a3982e29ac29325e",
+        "type": "mysql",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "mydb": "a12b21964a3d429c",
+        "name": "",
+        "x": 770,
+        "y": 420,
+        "wires": [
+            [
+                "5fec3a2015c82f7e"
+            ]
+        ]
+    },
+    {
+        "id": "5fec3a2015c82f7e",
+        "type": "function",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "name": "Status",
+        "func": "// Ambil threshold\nlet threshold = Number(msg.payload[0].threshold);\n\n// Ambil distance yang disimpan\nlet distance = flow.get(\"distance\");\n\n// Jika belum ada data\nif (distance == null) {\n    msg.payload = \"--\";\n    return msg;\n}\n\n// Logika\nif (distance <= threshold) {\n    msg.payload = \"🔴BAHAYA\";\n} else {\n    msg.payload = \"🟢AMAN\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 420,
+        "wires": [
+            [
+                "9b80d52f4bb724a2"
+            ]
+        ]
+    },
+    {
+        "id": "b47a9dae72ce33a8",
+        "type": "inject",
+        "z": "64acc005fd122c55",
+        "g": "3bc7bc7776af5420",
+        "name": "Inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "b2953f896ac371e3"
+            ]
+        ]
+    },
+    {
+        "id": "6c1fcdba7adc86b1",
+        "type": "ui_chart",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "name": "",
+        "group": "41475e6ac4300fbf",
+        "order": 1,
+        "width": 8,
+        "height": 4,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "20",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1590,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "722eab6075313ae6",
+        "type": "ui_chart",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "name": "",
+        "group": "3d4cc1d0e8edfc48",
+        "order": 1,
+        "width": 8,
+        "height": 4,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "20",
+        "ymax": "85",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1580,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "425eba14457694b2",
+        "type": "ui_chart",
+        "z": "64acc005fd122c55",
+        "g": "dea73e150009ad47",
+        "name": "",
+        "group": "7b1bde77bde4cc2b",
+        "order": 1,
+        "width": 8,
+        "height": 4,
+        "label": "Water Level",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "2",
+        "ymax": "400",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1590,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "470cafd950230955",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 6,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "17906afef46a6f5f",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 1,
+        "width": 26,
+        "height": 1
+    },
+    {
+        "id": "050606017bfbc2a9",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2aaf10ea5a72f04b",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "68106fd3c275a439",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7e635f1bf00b0918",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "20283c7187465ee2",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "731b401de9b7d153",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "14128d401ed94697",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5eff5ddda595bf36",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cafca223c1de46be",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 2,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "d567e7ef9fc52f90",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 3,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "fbef8f75a52b69cf",
+        "type": "ui_spacer",
+        "z": "64acc005fd122c55",
+        "name": "spacer",
+        "group": "",
+        "order": 4,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "a12b21964a3d429c",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "aws",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "e15a88b9d5110f79",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "aws",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "3ed302de3bca8af6",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "aws",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "d174702ed7b91f2e",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "aws",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "873b8d40bdbbd444",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "aws",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "2f384c6b9a1e761b",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "aws",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "99ac08f08d08f36a",
+        "type": "telegram bot",
+        "botname": "aws_iot_indo_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "d95a672fd9909642",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6794f86027e20ccd",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 1,
+        "disp": true,
+        "width": 4,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5d9d7eb91e792aaa",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 2,
+        "disp": true,
+        "width": 4,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c603e0c21b439f61",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 3,
+        "disp": true,
+        "width": 4,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9d11d5299601fdb4",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 4,
+        "disp": true,
+        "width": 4,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "41475e6ac4300fbf",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 5,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3d4cc1d0e8edfc48",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 6,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7b1bde77bde4cc2b",
+        "type": "ui_group",
+        "name": "",
+        "tab": "b9bb83a065561bf5",
+        "order": 7,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b9bb83a065561bf5",
+        "type": "ui_tab",
+        "name": "Automatic Weather System",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b7bad0aa0851abe1",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-mysql": "3.0.3",
+            "node-red-contrib-telegrambot": "18.1.1",
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
