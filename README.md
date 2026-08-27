@@ -17,6 +17,7 @@ Real-time weather monitoring system — monitors river water level, temperature,
 | Driver | CP210X USB Driver |
 | Application Support | • Node.js<br>• Telegram Bot |
 | Integration Platform | Node-RED |
+| MQTT Broker | EMQX |
 | Communications Protocol | Message Queuing Telemetry Transport (MQTT) |
 | IoT Architecture | 3 Layer |
 | Programming Language | C/C++ |
