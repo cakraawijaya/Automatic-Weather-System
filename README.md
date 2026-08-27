@@ -307,6 +307,37 @@ Real-time weather monitoring system — monitors river water level, temperature,
 <td align="center"><img src="Assets/Documentation/Experiment/NodeRED Dashboard.jpg" alt="dashboard"></td>
 </tr>
 </table>
+<table>
+<tr>
+<th width="840">Telegram Bot Menu</th>
+</tr>
+<tr>
+<td align="center"><img src="Assets/Documentation/Experiment/Telegram Bot Menu.jpg" alt="telegram-bot-menu"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="2">Monitoring Status</th>
+</tr>
+<tr>
+<td width="840" colspan="2" align="center"><img src="Assets/Documentation/Experiment/Monitoring Status/Inject.jpg" alt="monitoring-inject"></td>
+</tr>
+<tr>
+<td width="420" align="center"><img src="Assets/Documentation/Experiment/Monitoring Status/Safe.jpg" alt="safe"></td>
+<td width="420" align="center"><img src="Assets/Documentation/Experiment/Monitoring Status/Danger.jpg" alt="danger"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="2">Early Warning System</th>
+</tr>
+<tr>
+<td width="420" align="center"><img src="Assets/Documentation/Experiment/Early Warning System/Inject.jpg" alt="telegram-bot-inject"></td>
+</tr>
+<tr>
+<td width="420" align="center"><img src="Assets/Documentation/Experiment/Early Warning System/Telegram Bot Alert.jpg" alt="telegram-bot-alert"></td>
+</tr>
+</table>
 
 <br>
 <strong>More information:</strong> <a href="https://github.com/cakraawijaya/Automatic-Weather-System/blob/master/Assets/Documentation/Report/Portofolio%20Pelatihan%20Sertifikasi%20BNSP%20IIoT%20-%20Devan%20Cakra%20Mudra%20Wijaya-63-81.pdf"><u>Click Here</u></a>
