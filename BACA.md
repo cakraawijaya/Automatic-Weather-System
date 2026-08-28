@@ -24,7 +24,7 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 | Pustaka Arduino | • WiFi (default)<br>• DHT sensor library oleh Adafruit (Versi: 1.4.6)<br>• PubSubClient oleh Nick O'Leary (Versi: 2.8)<br>• ArduinoJson oleh Benoit Blanchon (Versi: 6.19.4) |
 | Palet Node-RED | • node-red (default)<br>• node-red-dashboard<br>• node-red-node-mysql<br>• node-red-contrib-telegrambot |
 | Sensor | • DHT11: Suhu & Kelembapan Udara (x1)<br>• HC-SR04: Sensor Ultrasonik (x1) |
-| Komponen Lainnya | • Kabel USB Mikro - USB tipe A (x1)<br>• Papan ekspansi ESP32 (x1)<br>• Adaptor DC 9V 1A (x1)<br>• Kabel jumper (1 set) |
+| Komponen Lainnya | • Kabel USB Mikro - USB tipe A (x1)<br>• Papan ekspansi ESP32 (x1)<br>• Adaptor DC 9V 1A (x1)<br>• Kabel jumper (1 set)<br>• Breadboard (x1) |
 
 <br><br>
 
