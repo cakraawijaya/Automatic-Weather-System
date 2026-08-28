@@ -192,7 +192,7 @@ Real-time weather monitoring system — monitors river water level, temperature,
 ## Database
 1. Open ``` XAMPP ```, then start the ``` MySQL ``` section to run a database server locally.<br><br>
 
-2. Access the browser first in order to open the database admin panel, please copy the following link: ``` localhost/phpmyadmin/ ```.<br><br>
+2. Access the ``` browser ``` first in order to open the database admin panel, please copy the following link: ``` localhost/phpmyadmin/ ```.<br><br>
 
 3. Create a database called ``` aws ```.<br><br>
 
