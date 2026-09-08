@@ -262,11 +262,11 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 
 8. Pengaturan ``` Site ``` di Node-RED dapat dikonfigurasi seperti yang ditunjukkan pada contoh di bawah ini :
 
-   <img src="Assets/Documentation/Experiment/Node-RED Config/Site.jpg" alt="node-red-site-config">
+   <img src="Assets/Documentation/Experiment/Node-RED Config/Site.jpg" alt="node-red-site-config"><br><br>
 
 9. Pengaturan ``` Theme ``` di Node-RED dapat dikonfigurasi seperti yang ditunjukkan pada contoh di bawah ini :
 
-   <img src="Assets/Documentation/Experiment/Node-RED Config/Theme.jpg" alt="node-red-theme-config">
+   <img src="Assets/Documentation/Experiment/Node-RED Config/Theme.jpg" alt="node-red-theme-config"><br><br>
 
 10. Kemudian, untuk menjalankan flow tersebut, klik ``` Deploy ```.
 
