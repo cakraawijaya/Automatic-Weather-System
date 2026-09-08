@@ -260,7 +260,19 @@ Real-time weather monitoring system — monitors river water level, temperature,
 
 7. Open the ``` Import ``` menu in Node-RED, then import ``` flow_nodered.json ``` in the ``` Automatic-Weather-System/Src/ ``` directory. Make sure all Node-RED flows have been successfully loaded.<br><br>
 
-8. Then, to run the flow, click ``` Deploy ```.
+8. The ``` Site ``` settings in Node-RED can be configured as shown in the example below :
+
+   <table><tr><td width="810">
+      <img src="Assets/Documentation/Diagram/Node-RED Site Configuration.jpg" alt="node-red-site-config">
+   </td></tr></table><br>
+
+9. The ``` Theme ``` settings in Node-RED can be configured as shown in the example below :
+
+   <table><tr><td width="810">
+      <img src="Assets/Documentation/Diagram/Node-RED Theme Configuration.jpg" alt="node-red-theme-config">
+   </td></tr></table><br>
+
+10. Then, to run the flow, click ``` Deploy ```.
 
 <br><br>
 
