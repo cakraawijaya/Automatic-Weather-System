@@ -260,7 +260,19 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 
 7. Buka menu ``` Import ``` di Node-RED, lalu impor ``` flow_nodered.json ``` di direktori ``` Automatic-Weather-System/Src/ ```. Pastikan semua flow Node-RED telah berhasil dimuat.<br><br>
 
-8. Kemudian, untuk menjalankan flow tersebut, klik ``` Deploy ```.
+8. Pengaturan ``` Site ``` di Node-RED dapat dikonfigurasi seperti yang ditunjukkan pada contoh di bawah ini :
+
+   <table><tr><td width="810">
+      <img src="Assets/Documentation/Diagram/Node-RED Site Configuration.jpg" alt="node-red-site-config">
+   </td></tr></table><br>
+
+9. Pengaturan ``` Theme ``` di Node-RED dapat dikonfigurasi seperti yang ditunjukkan pada contoh di bawah ini :
+
+   <table><tr><td width="810">
+      <img src="Assets/Documentation/Diagram/Node-RED Theme Configuration.jpg" alt="node-red-theme-config">
+   </td></tr></table><br>
+
+10. Kemudian, untuk menjalankan flow tersebut, klik ``` Deploy ```.
 
 <br><br>
 
