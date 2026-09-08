@@ -262,15 +262,11 @@ Real-time weather monitoring system — monitors river water level, temperature,
 
 8. The ``` Site ``` settings in Node-RED can be configured as shown in the example below :
 
-   <table><tr><td width="810">
-      <img src="Assets/Documentation/Experiment/Node-RED Config/Site.jpg" alt="node-red-site-config">
-   </td></tr></table><br>
+   <img src="Assets/Documentation/Experiment/Node-RED Config/Site.jpg" alt="node-red-site-config">
 
 9. The ``` Theme ``` settings in Node-RED can be configured as shown in the example below :
 
-   <table><tr><td width="810">
-      <img src="Assets/Documentation/Experiment/Node-RED Config/Theme.jpg" alt="node-red-theme-config">
-   </td></tr></table><br>
+   <img src="Assets/Documentation/Experiment/Node-RED Config/Theme.jpg" alt="node-red-theme-config">
 
 10. Then, to run the flow, click ``` Deploy ```.
 
