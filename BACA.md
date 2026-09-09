@@ -24,7 +24,7 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 | Pustaka Arduino | • WiFi (bawaan)<br>• DHT sensor library oleh Adafruit (Versi: 1.4.6)<br>• PubSubClient oleh Nick O'Leary (Versi: 2.8)<br>• ArduinoJson oleh Benoit Blanchon (Versi: 6.19.4) |
 | Palet Node-RED | • node-red (bawaan)<br>• node-red-dashboard<br>• node-red-node-mysql<br>• node-red-contrib-telegrambot |
 | Sensor | • DHT11: Suhu & Kelembapan Udara (x1)<br>• HC-SR04: Sensor Ultrasonik (x1) |
-| Komponen Lainnya | • Kabel USB Mikro - USB tipe A (x1)<br>• Papan ekspansi ESP32 (x1)<br>• Adaptor DC 9V 1A (x1)<br>• Kabel jumper (1 set)<br>• Breadboard (x1) |
+| Komponen Lainnya | • Kabel USB Mikro - USB tipe A (x1)<br>• Papan ekspansi ESP32 (x1)<br>• Adaptor DC 9V 1A (x1)<br>• Kabel jumper (1 set)<br>• Breadboard (x1)<br>• Box Proyek X3 (x1)<br>• Sekrup (x4)<br>• Baut M3 x 16 (x6)<br>• Baut M4 x 10 (x2)<br>• Mur M3 (x6)<br>• Mur M4 (x2) |
 
 <br><br>
 
@@ -289,10 +289,22 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 
 <table>
 <tr>
-<th width="840">Perangkat</th>
+<th width="840">Prototipe Perangkat</th>
 </tr>
 <tr>
-<td align="center"><img src="Assets/Documentation/Experiment/Device.jpg" alt="device"></td>
+<td align="center"><img src="Assets/Documentation/Experiment/Prototype/Device.jpg" alt="device"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="5">Enclosed Device</th>
+</tr>
+<tr>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-1.jpg" alt="device-1"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-2.jpg" alt="device-2"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-3.jpg" alt="device-3"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-4.jpg" alt="device-4"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-5.jpg" alt="device-5"></td>
 </tr>
 </table>
 <table>

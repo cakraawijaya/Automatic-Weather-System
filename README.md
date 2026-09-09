@@ -24,7 +24,7 @@ Real-time weather monitoring system — monitors river water level, temperature,
 | Arduino Library | • WiFi (default)<br>• DHT sensor library by Adafruit (Version: 1.4.6)<br>• PubSubClient by Nick O'Leary (Version: 2.8)<br>• ArduinoJson by Benoit Blanchon (Version: 6.19.4) |
 | Node-RED Pallete | • node-red (default)<br>• node-red-dashboard<br>• node-red-node-mysql<br>• node-red-contrib-telegrambot |
 | Sensor | • DHT11: Air Temperature & Humidity (x1)<br>• HC-SR04: Ultrasonic Sensor (x1) |
-| Other Components | • Micro USB cable - USB type A (x1)<br>• ESP32 expansion board (x1)<br>• Adaptor DC 9V 1A (x1)<br>• Jumper cable (1 set)<br>• Breadboard (x1) |
+| Other Components | • Micro USB cable - USB type A (x1)<br>• ESP32 expansion board (x1)<br>• Adaptor DC 9V 1A (x1)<br>• Jumper cable (1 set)<br>• Breadboard (x1)<br>• Project Box X3 (x1)<br>• Screws (x4)<br>• Bolts M3 x 16 (x6)<br>• Bolts M4 x 10 (x2)<br>• Nuts M3 (x6)<br>• Nuts M4 (x2) |
 
 <br><br>
 
@@ -289,10 +289,22 @@ Real-time weather monitoring system — monitors river water level, temperature,
 
 <table>
 <tr>
-<th width="840">Device</th>
+<th width="840">Device Prototype</th>
 </tr>
 <tr>
-<td align="center"><img src="Assets/Documentation/Experiment/Device.jpg" alt="device"></td>
+<td align="center"><img src="Assets/Documentation/Experiment/Prototype/Device.jpg" alt="device"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="5">Enclosed Device</th>
+</tr>
+<tr>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-1.jpg" alt="device-1"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-2.jpg" alt="device-2"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-3.jpg" alt="device-3"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-4.jpg" alt="device-4"></td>
+<td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-5.jpg" alt="device-5"></td>
 </tr>
 </table>
 <table>
