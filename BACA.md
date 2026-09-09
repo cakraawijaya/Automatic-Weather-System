@@ -297,7 +297,7 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 </table>
 <table>
 <tr>
-<th width="840" colspan="5">Enclosed Device</th>
+<th width="840" colspan="5">Perangkat dengan Casing</th>
 </tr>
 <tr>
 <td width="168" align="center"><img src="Assets/Documentation/Experiment/Cover/Device-1.jpg" alt="device-1"></td>
