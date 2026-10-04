@@ -360,7 +360,7 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 </table>
 
 <br>
-<strong>Informasi lebih lanjut:</strong> <a href="https://github.com/cakraawijaya/Automatic-Weather-System/blob/master/Assets/Documentation/Report/Portofolio%20Pelatihan%20Sertifikasi%20BNSP%20IIoT%20-%20Devan%20Cakra%20Mudra%20Wijaya-63-81.pdf"><u>Click Here</u></a>
+<strong>Informasi lebih lanjut:</strong> <a href="https://github.com/cakraawijaya/Automatic-Weather-System/blob/master/Assets/Documentation/Report/Portofolio%20Pelatihan%20Sertifikasi%20BNSP%20IIoT%20-%20Devan%20Cakra%20Mudra%20Wijaya%20-%20Project%2027.pdf"><u>Click Here</u></a>
 
 <br><br><br>
 
