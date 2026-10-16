@@ -340,9 +340,6 @@ Sistem pemantauan cuaca secara real-time — memantau ketinggian air sungai, suh
 <th width="840" colspan="2">Pemantauan Status</th>
 </tr>
 <tr>
-<td width="840" colspan="2" align="center"><img src="Assets/Documentation/Experiment/Monitoring Status/Inject.jpg" alt="monitoring-inject"></td>
-</tr>
-<tr>
 <td width="420" align="center"><img src="Assets/Documentation/Experiment/Monitoring Status/Safe.jpg" alt="safe"></td>
 <td width="420" align="center"><img src="Assets/Documentation/Experiment/Monitoring Status/Danger.jpg" alt="danger"></td>
 </tr>
